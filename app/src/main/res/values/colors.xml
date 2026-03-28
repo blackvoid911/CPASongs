@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="navy_primary">#FF1B2E4A</color>
+    <color name="navy_light">#FF2D4A6E</color>
+    <color name="accent_red">#FFDC3545</color>
+
+    <!-- Light Theme -->
+    <color name="splash_background">#FFFAFAFA</color>
+    <color name="light_surface">#FFFFFFFF</color>
+
+    <!-- Dark Theme -->
+    <color name="dark_background">#FF0A0A0A</color>
+    <color name="dark_surface">#FF1A1A1A</color>
+
+    <!-- Legacy (kept for compatibility) -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

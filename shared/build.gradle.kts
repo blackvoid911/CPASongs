@@ -75,3 +75,10 @@ android {
     }
 }
 
+compose.resources {
+    // Fix: project name "CPA Songs" has a space which breaks default package generation
+    packageOfResClass = "com.cpa.cpasongs.shared.generated.resources"
+    generateResClass = always
+}
+
+

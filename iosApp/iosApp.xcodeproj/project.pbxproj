@@ -1,0 +1,279 @@
+﻿// !$*UTF8*$!
+{
+archiveVersion = 1;
+classes = {
+};
+objectVersion = 56;
+objects = {
+/* Begin PBXBuildFile section */
+AA000001 /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002 /* iOSApp.swift */; };
+AA000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004 /* ContentView.swift */; };
+AA000005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA000006 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+/* Begin PBXFileReference section */
+AA000002 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+AA000004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+AA000006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+AA000007 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+/* Begin PBXFrameworksBuildPhase section */
+AA000010 /* Frameworks */ = {
+isa = PBXFrameworksBuildPhase;
+buildActionMask = 2147483647;
+files = (
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+/* End PBXFrameworksBuildPhase section */
+/* Begin PBXGroup section */
+AA000020 /* iosApp */ = {
+isa = PBXGroup;
+children = (
+AA000002 /* iOSApp.swift */,
+AA000004 /* ContentView.swift */,
+AA000006 /* Assets.xcassets */,
+);
+path = iosApp;
+sourceTree = "<group>";
+};
+AA000021 /* Products */ = {
+isa = PBXGroup;
+children = (
+AA000007 /* iosApp.app */,
+);
+name = Products;
+sourceTree = "<group>";
+};
+AA000022 /* MainGroup */ = {
+isa = PBXGroup;
+children = (
+AA000020 /* iosApp */,
+AA000021 /* Products */,
+);
+sourceTree = "<group>";
+};
+/* End PBXGroup section */
+/* Begin PBXNativeTarget section */
+AA000030 /* iosApp */ = {
+isa = PBXNativeTarget;
+buildConfigurationList = AA000040 /* Build configuration list for PBXNativeTarget "iosApp" */;
+buildPhases = (
+AA000050 /* Build KMP Shared Framework */,
+AA000010 /* Frameworks */,
+AA000011 /* Sources */,
+AA000012 /* Resources */,
+);
+buildRules = (
+);
+dependencies = (
+);
+name = iosApp;
+productName = iosApp;
+productReference = AA000007 /* iosApp.app */;
+productType = "com.apple.product-type.application";
+};
+/* End PBXNativeTarget section */
+/* Begin PBXProject section */
+AA000060 /* Project object */ = {
+isa = PBXProject;
+attributes = {
+BuildIndependentTargetsInParallel = 1;
+LastSwiftUpdateCheck = 1500;
+LastUpgradeCheck = 1500;
+TargetAttributes = {
+AA000030 = {
+CreatedOnToolsVersion = 15.0;
+};
+};
+};
+buildConfigurationList = AA000041 /* Build configuration list for PBXProject "iosApp" */;
+compatibilityVersion = "Xcode 14.0";
+developmentRegion = en;
+hasScannedForEncodings = 0;
+knownRegions = (
+en,
+Base,
+);
+mainGroup = AA000022 /* MainGroup */;
+productRefGroup = AA000021 /* Products */;
+projectDirPath = "";
+projectRoot = "";
+targets = (
+AA000030 /* iosApp */,
+);
+};
+/* End PBXProject section */
+/* Begin PBXResourcesBuildPhase section */
+AA000012 /* Resources */ = {
+isa = PBXResourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+AA000005 /* Assets.xcassets in Resources */,
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+/* End PBXResourcesBuildPhase section */
+/* Begin PBXShellScriptBuildPhase section */
+AA000050 /* Build KMP Shared Framework */ = {
+isa = PBXShellScriptBuildPhase;
+buildActionMask = 2147483647;
+files = (
+);
+inputFileListPaths = (
+);
+inputPaths = (
+"$(SRCROOT)/../shared/src",
+);
+name = "Build KMP Shared Framework";
+outputFileListPaths = (
+);
+outputPaths = (
+"$(SRCROOT)/../shared/build/bin/iosSimulatorArm64/debugFramework/shared.framework",
+);
+runOnlyForDeploymentPostprocessing = 0;
+shellPath = /bin/sh;
+shellScript = "cd \"${SRCROOT}/..\"\nif [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n  ./gradlew :shared:linkDebugFrameworkIosSimulatorArm64 2>&1\nelse\n  ./gradlew :shared:linkReleaseFrameworkIosArm64 2>&1\nfi\n";
+};
+/* End PBXShellScriptBuildPhase section */
+/* Begin PBXSourcesBuildPhase section */
+AA000011 /* Sources */ = {
+isa = PBXSourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+AA000001 /* iOSApp.swift in Sources */,
+AA000003 /* ContentView.swift in Sources */,
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+/* End PBXSourcesBuildPhase section */
+/* Begin XCBuildConfiguration section */
+AA000070 /* Debug */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ALWAYS_SEARCH_USER_PATHS = NO;
+CLANG_ENABLE_MODULES = YES;
+CLANG_ENABLE_OBJC_ARC = YES;
+COPY_PHASE_STRIP = NO;
+DEBUG_INFORMATION_FORMAT = dwarf;
+GCC_OPTIMIZATION_LEVEL = 0;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+ONLY_ACTIVE_ARCH = YES;
+SDKROOT = iphoneos;
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+};
+name = Debug;
+};
+AA000071 /* Release */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ALWAYS_SEARCH_USER_PATHS = NO;
+CLANG_ENABLE_MODULES = YES;
+CLANG_ENABLE_OBJC_ARC = YES;
+COPY_PHASE_STRIP = NO;
+DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+ENABLE_NS_ASSERTIONS = NO;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+MTL_FAST_MATH = YES;
+SDKROOT = iphoneos;
+SWIFT_COMPILATION_MODE = wholemodule;
+SWIFT_OPTIMIZATION_LEVEL = "-O";
+VALIDATE_PRODUCT = YES;
+};
+name = Release;
+};
+AA000072 /* Debug (app target) */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+CODE_SIGN_STYLE = Automatic;
+CURRENT_PROJECT_VERSION = 1;
+FRAMEWORK_SEARCH_PATHS = (
+"$(inherited)",
+"$(SRCROOT)/../shared/build/bin/iosSimulatorArm64/debugFramework",
+);
+GENERATE_INFOPLIST_FILE = YES;
+INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+LD_RUNPATH_SEARCH_PATHS = (
+"$(inherited)",
+"@executable_path/Frameworks",
+);
+MARKETING_VERSION = 1.0;
+OTHER_LDFLAGS = (
+"$(inherited)",
+"-framework",
+shared,
+);
+PRODUCT_BUNDLE_IDENTIFIER = com.cpa.cpasongs.ios;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_EMIT_LOC_STRINGS = YES;
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Debug;
+};
+AA000073 /* Release (app target) */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+CODE_SIGN_STYLE = Automatic;
+CURRENT_PROJECT_VERSION = 1;
+FRAMEWORK_SEARCH_PATHS = (
+"$(inherited)",
+"$(SRCROOT)/../shared/build/bin/iosArm64/releaseFramework",
+);
+GENERATE_INFOPLIST_FILE = YES;
+INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+LD_RUNPATH_SEARCH_PATHS = (
+"$(inherited)",
+"@executable_path/Frameworks",
+);
+MARKETING_VERSION = 1.0;
+OTHER_LDFLAGS = (
+"$(inherited)",
+"-framework",
+shared,
+);
+PRODUCT_BUNDLE_IDENTIFIER = com.cpa.cpasongs.ios;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_EMIT_LOC_STRINGS = YES;
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Release;
+};
+/* End XCBuildConfiguration section */
+/* Begin XCConfigurationList section */
+AA000040 /* Build configuration list for PBXNativeTarget "iosApp" */ = {
+isa = XCConfigurationList;
+buildConfigurations = (
+AA000072 /* Debug */,
+AA000073 /* Release */,
+);
+defaultConfigurationIsVisible = 0;
+defaultConfigurationName = Release;
+};
+AA000041 /* Build configuration list for PBXProject "iosApp" */ = {
+isa = XCConfigurationList;
+buildConfigurations = (
+AA000070 /* Debug */,
+AA000071 /* Release */,
+);
+defaultConfigurationIsVisible = 0;
+defaultConfigurationName = Release;
+};
+/* End XCConfigurationList section */
+};
+rootObject = AA000060 /* Project object */;
+}
