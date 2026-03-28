@@ -2,9 +2,9 @@ name: Build Android & iOS (KMP)
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, master, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
   workflow_dispatch:  # Manual trigger
 
 jobs:
