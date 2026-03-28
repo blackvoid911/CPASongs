@@ -1,0 +1,9 @@
+ Volume in drive C has no label.
+ Volume Serial Number is F4CC-E781
+
+ Directory of C:\Users\WelCome\AndroidStudioProjects\CPASongs\screenshots\png
+
+03/24/2026  02:08 PM           741,760 mockup_bible_screenshot.png
+03/24/2026  02:14 PM           581,455 tablet_mockup_screenshot.png
+               2 File(s)      1,323,215 bytes
+               0 Dir(s)  260,759,203,840 bytes free

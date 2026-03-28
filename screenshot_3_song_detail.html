@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Screenshot 3 - Song Detail</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1920px; overflow: hidden; font-family: 'Segoe UI', sans-serif; }
+  .phone {
+    width: 1080px; height: 1920px;
+    background: #0F172A;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  .caption-banner {
+    width: 100%; height: 200px;
+    background: linear-gradient(135deg, #4A90D9, #1E3A5F);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .caption-text {
+    font-size: 52px; font-weight: 800; color: white;
+    text-align: center; letter-spacing: 1px;
+  }
+  .top-bar {
+    padding: 32px 40px 16px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .back-arrow { font-size: 44px; color: #F1F5F9; }
+  .content {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; padding: 40px 60px;
+    overflow: hidden;
+  }
+  .category-badge {
+    background: linear-gradient(135deg, #4A90D9, #2E5B8A);
+    padding: 14px 40px; border-radius: 40px;
+    font-size: 26px; font-weight: 700; color: white;
+    letter-spacing: 4px; text-transform: uppercase;
+  }
+  .song-title {
+    margin-top: 36px;
+    font-size: 52px; font-weight: 700; color: #F1F5F9;
+    text-align: center; line-height: 1.3;
+  }
+  .divider {
+    margin-top: 40px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .divider-line {
+    width: 80px; height: 2px;
+    background: linear-gradient(to right, transparent, #4A90D9);
+  }
+  .divider-line.right {
+    background: linear-gradient(to left, transparent, #4A90D9);
+  }
+  .divider-dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: #4A90D9;
+  }
+  .lyrics {
+    margin-top: 48px;
+    font-size: 38px; color: #F1F5F9;
+    text-align: center; line-height: 2.2;
+    padding: 0 20px;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="caption-banner">
+    <div class="caption-text">Lyrics with Beautiful Typography</div>
+  </div>
+
+  <div class="top-bar">
+    <div class="back-arrow">←</div>
+  </div>
+
+  <div class="content">
+    <div class="category-badge">SONG</div>
+
+    <div class="song-title">Amazing Grace</div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line right"></div>
+    </div>
+
+    <div class="lyrics">
+      Amazing grace! How sweet the sound<br>
+      That saved a wretch like me!<br>
+      I once was lost, but now am found;<br>
+      Was blind, but now I see.<br><br>
+      'Twas grace that taught my heart to fear,<br>
+      And grace my fears relieved;<br>
+      How precious did that grace appear<br>
+      The hour I first believed.
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

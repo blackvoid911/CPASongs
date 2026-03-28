@@ -1,0 +1,93 @@
+Found 66 HTML files to process.
+
+  [OK]    1chronicles.json  already complete (942 v, cache:942)
+  [OK]    1corinthians.json  already complete (437 v, cache:437)
+  [OK]    1john.json  already complete (105 v, cache:105)
+  [OK]    1kings.json  already complete (816 v, cache:816)
+  [OK]    1peter.json  already complete (105 v, cache:105)
+  [OK]    1samuel.json  already complete (810 v, cache:810)
+  [OK]    1thessalonians.json  already complete (89 v, cache:89)
+  [OK]    1timothy.json  already complete (113 v, cache:113)
+  [OK]    2chronicles.json  already complete (822 v, cache:822)
+  [OK]    2corinthians.json  already complete (257 v, cache:257)
+  [OK]    2john.json  already complete (13 v, cache:13)
+  [OK]    2kings.json  already complete (719 v, cache:719)
+  [OK]    2peter.json  already complete (61 v, cache:61)
+  [OK]    2samuel.json  already complete (695 v, cache:695)
+  [OK]    2thessalonians.json  already complete (47 v, cache:47)
+  [OK]    2timothy.json  already complete (83 v, cache:83)
+  [OK]    3john.json  already complete (15 v, cache:15)
+  [OK]    acts.json  already complete (1007 v, cache:1007)
+  [UPDATE] amos.json  <- amo.html  (9 ch, 146 v)  was:9
+  [OK]    colossians.json  already complete (95 v, cache:95)
+  [OK]    daniel.json  already complete (357 v, cache:357)
+  [OK]    deuteronomy.json  already complete (959 v, cache:959)
+  [OK]    ecclesiastes.json  already complete (222 v, cache:222)
+  [OK]    ephesians.json  already complete (155 v, cache:155)
+  [UPDATE] esther.json  <- est.html  (10 ch, 167 v)  was:10
+  [OK]    exodus.json  already complete (1213 v, cache:1213)
+  [OK]    ezekiel.json  already complete (1273 v, cache:1273)
+  [OK]    ezra.json  already complete (280 v, cache:280)
+  [OK]    galatians.json  already complete (149 v, cache:149)
+  [OK]    genesis.json  already complete (1533 v, cache:1533)
+  [UPDATE] habakkuk.json  <- hab.html  (3 ch, 56 v)  was:3
+  [UPDATE] haggai.json  <- hag.html  (2 ch, 38 v)  was:2
+  [OK]    hebrews.json  already complete (303 v, cache:303)
+  [OK]    hosea.json  already complete (197 v, cache:197)
+  [OK]    isaiah.json  already complete (1292 v, cache:1292)
+  [OK]    james.json  already complete (108 v, cache:108)
+  [OK]    judges.json  already complete (618 v, cache:618)
+  [OK]    jeremiah.json  already complete (1364 v, cache:1364)
+  [OK]    john.json  already complete (879 v, cache:879)
+  [OK]    job.json  already complete (1057 v, cache:1057)
+  [OK]    joel.json  already complete (73 v, cache:73)
+  [UPDATE] jonah.json  <- jon.html  (4 ch, 48 v)  was:4
+  [OK]    joshua.json  already complete (658 v, cache:658)
+  [OK]    jude.json  already complete (25 v, cache:25)
+  [OK]    lamentations.json  already complete (154 v, cache:154)
+  [OK]    leviticus.json  already complete (859 v, cache:859)
+  [OK]    luke.json  already complete (1151 v, cache:1151)
+  [UPDATE] malachi.json  <- mal.html  (4 ch, 55 v)  was:4
+  [UPDATE] matthew.json  <- mat.html  (28 ch, 1071 v)  was:28
+  [UPDATE] micah.json  <- mic.html  (7 ch, 105 v)  was:7
+  [UPDATE] mark.json  <- mrk.html  (16 ch, 678 v)  was:16
+  [UPDATE] nahum.json  <- nam.html  (3 ch, 47 v)  was:3
+  [UPDATE] nehemiah.json  <- neh.html  (13 ch, 406 v)  was:13
+  [OK]    numbers.json  already complete (1288 v, cache:1288)
+  [UPDATE] obadiah.json  <- oba.html  (1 ch, 21 v)  was:1
+  [OK]    philemon.json  already complete (25 v, cache:25)
+  [OK]    philippians.json  already complete (104 v, cache:104)
+  [OK]    proverbs.json  already complete (915 v, cache:915)
+  [OK]    psalms.json  already complete (2461 v, cache:2461)
+  [OK]    revelation.json  already complete (404 v, cache:404)
+  [OK]    romans.json  already complete (433 v, cache:433)
+  [OK]    ruth.json  already complete (85 v, cache:85)
+  [OK]    songofsolomon.json  already complete (117 v, cache:117)
+  [OK]    titus.json  already complete (46 v, cache:46)
+  [UPDATE] zechariah.json  <- zec.html  (14 ch, 211 v)  was:14
+  [UPDATE] zephaniah.json  <- zep.html  (3 ch, 53 v)  was:3
+
+=================================================================
+  Updated  : 14 books
+  Skipped  : 52 books (already up-to-date)
+  No Urdu  : 0 files (English-only or non-book)
+  No match : 0 files (non-book HTML)
+=================================================================
+
+  Books updated:
+    amos                        9 ch    146 verses
+    esther                     10 ch    167 verses
+    habakkuk                    3 ch     56 verses
+    haggai                      2 ch     38 verses
+    jonah                       4 ch     48 verses
+    malachi                     4 ch     55 verses
+    matthew                    28 ch   1071 verses
+    micah                       7 ch    105 verses
+    mark                       16 ch    678 verses
+    nahum                       3 ch     47 verses
+    nehemiah                   13 ch    406 verses
+    obadiah                     1 ch     21 verses
+    zechariah                  14 ch    211 verses
+    zephaniah                   3 ch     53 verses
+
+  Total new Urdu verses written: 3,102

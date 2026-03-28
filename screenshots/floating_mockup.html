@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 1600px;
+    background: linear-gradient(180deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Floating phone mockup */
+  .floating-phone {
+    position: absolute;
+    top: 200px; left: 50%;
+    transform: translateX(-50%) perspective(1000px) rotateY(-15deg) rotateX(5deg);
+    width: 350px; height: 700px;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    border-radius: 50px;
+    padding: 8px;
+    box-shadow:
+      0 40px 120px rgba(0,0,0,0.8),
+      0 20px 60px rgba(74,144,217,0.2),
+      inset 0 0 0 3px #444;
+    z-index: 10;
+  }
+
+  .phone-screen {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    border-radius: 42px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* iPhone notch */
+  .floating-phone::before {
+    content: '';
+    position: absolute;
+    top: 20px; left: 50%;
+    transform: translateX(-50%);
+    width: 120px; height: 25px;
+    background: #1a1a1a;
+    border-radius: 0 0 15px 15px;
+    z-index: 20;
+  }
+
+  /* Glowing orb background */
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+  }
+  .orb1 {
+    width: 300px; height: 300px;
+    background: linear-gradient(135deg, #4A90D9, #2E5B8A);
+    top: 100px; right: 100px;
+  }
+  .orb2 {
+    width: 400px; height: 400px;
+    background: linear-gradient(45deg, #1E3A5F, #4A90D9);
+    bottom: 150px; left: 50px;
+  }
+  .orb3 {
+    width: 200px; height: 200px;
+    background: linear-gradient(225deg, #2E5B8A, #1E3A5F);
+    top: 300px; left: 200px;
+  }
+
+  /* Song detail content */
+  .song-content {
+    padding: 40px 30px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .category-badge {
+    background: linear-gradient(135deg, #4A90D9, #2E5B8A);
+    padding: 12px 32px;
+    border-radius: 25px;
+    font-size: 14px; font-weight: 800; color: white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(74,144,217,0.4);
+  }
+
+  .song-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 800; color: #F1F5F9;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 15px; margin-bottom: 30px;
+  }
+  .divider-line {
+    width: 60px; height: 2px;
+    background: linear-gradient(to right, transparent, #4A90D9);
+  }
+  .divider-line.right {
+    background: linear-gradient(to left, transparent, #4A90D9);
+  }
+  .divider-dot {
+    width: 8px; height: 8px;
+    background: #4A90D9;
+    border-radius: 50%;
+  }
+
+  .lyrics {
+    font-size: 20px; color: #E2E8F0;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .verse-num {
+    display: inline-block;
+    width: 28px; height: 28px;
+    background: rgba(74,144,217,0.2);
+    border-radius: 50%;
+    font-size: 12px; font-weight: 800; color: #4A90D9;
+    text-align: center; line-height: 28px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* Status bar */
+  .status-bar {
+    width: 100%; height: 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px;
+    color: rgba(241,245,249,0.8);
+    font-size: 12px; font-weight: 600;
+    position: absolute; top: 0; left: 0;
+    z-index: 30;
+  }
+
+  /* Marketing content */
+  .marketing-left {
+    position: absolute;
+    left: 80px; top: 300px;
+    color: white;
+    width: 280px;
+  }
+
+  .marketing-right {
+    position: absolute;
+    right: 80px; top: 400px;
+    color: white;
+    width: 280px;
+    text-align: right;
+  }
+
+  .marketing-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 900;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .marketing-subtitle {
+    font-size: 18px; font-weight: 500;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .feature-item {
+    display: flex; align-items: center;
+    margin-bottom: 12px;
+    font-size: 16px; font-weight: 500;
+  }
+
+  .marketing-right .feature-item {
+    justify-content: flex-end;
+  }
+
+  .feature-icon {
+    background: linear-gradient(135deg, #4A90D9, #2E5B8A);
+    color: white;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800;
+    margin-right: 12px;
+  }
+
+  .marketing-right .feature-icon {
+    margin-right: 0; margin-left: 12px;
+  }
+
+  /* Bottom branding */
+  .bottom-brand {
+    position: absolute;
+    bottom: 80px; left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+  }
+
+  .brand-logo {
+    width: 60px; height: 60px;
+    background: linear-gradient(135deg, #4A90D9, #1E3A5F);
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px; color: white;
+    box-shadow: 0 8px 24px rgba(74,144,217,0.4);
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .brand-tagline {
+    font-size: 16px; color: rgba(255,255,255,0.8);
+  }
+</style>
+</head>
+<body>
+  <div class="glow-orb orb1"></div>
+  <div class="glow-orb orb2"></div>
+  <div class="glow-orb orb3"></div>
+
+  <div class="marketing-left">
+    <div class="marketing-title">Beautiful Lyrics Display</div>
+    <div class="marketing-subtitle">Experience hymns with perfect typography and elegant formatting</div>
+    <div class="feature-item">
+      <div class="feature-icon">✓</div>
+      <span>Verse numbering</span>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">✓</div>
+      <span>Urdu & English</span>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">✓</div>
+      <span>Large readable text</span>
+    </div>
+  </div>
+
+  <div class="floating-phone">
+    <div class="phone-screen">
+      <div class="status-bar">
+        <span>9:41</span>
+        <span>🔋 📶</span>
+      </div>
+
+      <div class="song-content">
+        <div class="category-badge">HYMN</div>
+        <div class="song-title">Amazing Grace</div>
+
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-line right"></div>
+        </div>
+
+        <div class="lyrics">
+          <span class="verse-num">1</span><br>
+          Amazing grace! How sweet the sound<br>
+          That saved a wretch like me!<br>
+          I once was lost, but now am found;<br>
+          Was blind, but now I see.<br><br>
+
+          <span class="verse-num">2</span><br>
+          'Twas grace that taught my heart to fear,<br>
+          And grace my fears relieved;<br>
+          How precious did that grace appear<br>
+          The hour I first believed.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marketing-right">
+    <div class="marketing-title">Spiritual Connection</div>
+    <div class="marketing-subtitle">Connect deeper with faith through beautifully presented content</div>
+    <div class="feature-item">
+      <span>Offline access</span>
+      <div class="feature-icon">✓</div>
+    </div>
+    <div class="feature-item">
+      <span>Search functionality</span>
+      <div class="feature-icon">✓</div>
+    </div>
+    <div class="feature-item">
+      <span>Category organization</span>
+      <div class="feature-icon">✓</div>
+    </div>
+  </div>
+
+  <div class="bottom-brand">
+    <div class="brand-logo">✝</div>
+    <div class="brand-name">CPASongs</div>
+    <div class="brand-tagline">Your digital hymnal companion</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+  
+====================  
+CPASongs App Bundle Build Summary  
+====================  
+  
+Build Date: Tue 03/24/2026 14:48:52.04  
+Bundle File: app-release.aab  
+Bundle Size: 6.96 MB (6,962,153 bytes)  
+Location: app\build\outputs\bundle\release\  
+Status: SUCCESS  
+  
+Ready for Google Play Console upload 

@@ -1,0 +1,999 @@
+============================================================
+Urdu Bible Download Log
+============================================================
+
+
+[1/66] Genesis (پیدائش)
+  Have 0/50 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  Ch 29: placeholder
+  Ch 30: placeholder
+  Ch 31: placeholder
+  Ch 32: placeholder
+  Ch 33: placeholder
+  Ch 34: placeholder
+  Ch 35: placeholder
+  Ch 36: placeholder
+  Ch 37: placeholder
+  Ch 38: placeholder
+  Ch 39: placeholder
+  Ch 40: placeholder
+  Ch 41: placeholder
+  Ch 42: placeholder
+  Ch 43: placeholder
+  Ch 44: placeholder
+  Ch 45: placeholder
+  Ch 46: placeholder
+  Ch 47: placeholder
+  Ch 48: placeholder
+  Ch 49: placeholder
+  Ch 50: placeholder
+  FAILED
+
+[2/66] Exodus (خُروج)
+  Have 0/40 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  Ch 29: placeholder
+  Ch 30: placeholder
+  Ch 31: placeholder
+  Ch 32: placeholder
+  Ch 33: placeholder
+  Ch 34: placeholder
+  Ch 35: placeholder
+  Ch 36: placeholder
+  Ch 37: placeholder
+  Ch 38: placeholder
+  Ch 39: placeholder
+  Ch 40: placeholder
+  FAILED
+
+[3/66] Leviticus (احبار)
+  Have 1/27 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  PARTIAL: 1/27
+
+[4/66] Numbers (گنتی)
+  Have 1/36 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  Ch 29: placeholder
+  Ch 30: placeholder
+  Ch 31: placeholder
+  Ch 32: placeholder
+  Ch 33: placeholder
+  Ch 34: placeholder
+  Ch 35: placeholder
+  Ch 36: placeholder
+  PARTIAL: 1/36
+
+[5/66] Deuteronomy (اِستِثنا)
+  Have 2/34 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  Ch 29: placeholder
+  Ch 30: placeholder
+  Ch 32: placeholder
+  Ch 33: placeholder
+  Ch 34: placeholder
+  PARTIAL: 2/34
+
+[6/66] Joshua (یشُوع)
+  Have 2/24 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  PARTIAL: 2/24
+
+[7/66] Judges (قُضاۃ)
+  Have 1/21 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  PARTIAL: 1/21
+
+[8/66] Ruth (رُوت)
+  Have 2/4 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 3: placeholder
+  PARTIAL: 2/4
+
+[9/66] 1 Samuel (۱-سموئیل)
+  Have 4/31 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  Ch 29: placeholder
+  Ch 30: placeholder
+  Ch 31: placeholder
+  PARTIAL: 4/31
+
+[10/66] 2 Samuel (۲-سموئیل)
+  Have 2/24 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  PARTIAL: 2/24
+
+[11/66] 1 Kings (۱-سلاطین)
+  Have 3/22 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  PARTIAL: 3/22
+
+[12/66] 2 Kings (۲-سلاطین)
+  Have 1/25 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  PARTIAL: 1/25
+
+[13/66] 1 Chronicles (۱-تواریخ)
+  Have 2/29 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  PARTIAL: 2/29
+
+[14/66] 2 Chronicles (۲-تواریخ)
+  Have 2/36 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  Ch 29: placeholder
+  Ch 30: placeholder
+  Ch 31: placeholder
+  Ch 32: placeholder
+  Ch 33: placeholder
+  Ch 34: placeholder
+  Ch 35: placeholder
+  Ch 36: placeholder
+  PARTIAL: 2/36
+
+[15/66] Ezra (عزرا)
+  Have 1/10 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  PARTIAL: 1/10
+
+[16/66] Nehemiah (نحمیاہ)
+  Already complete (13 chapters)
+
+[17/66] Esther (آستر)
+  Have 1/10 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  PARTIAL: 1/10
+
+[18/66] Job (ایّوب)
+  Have 41/42 chapters, fetching rest...
+  Ch 2: placeholder
+  PARTIAL: 41/42
+
+[19/66] Psalms (زبُور)
+  Have 27/150 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 28: placeholder
+  Ch 29: placeholder
+  Ch 30: placeholder
+  Ch 31: placeholder
+  Ch 32: placeholder
+  Ch 33: placeholder
+  Ch 35: placeholder
+  Ch 36: placeholder
+  Ch 38: placeholder
+  Ch 39: placeholder
+  Ch 41: placeholder
+  Ch 43: placeholder
+  Ch 44: placeholder
+  Ch 45: placeholder
+  Ch 47: placeholder
+  Ch 48: placeholder
+  Ch 49: placeholder
+  Ch 50: placeholder
+  Ch 52: placeholder
+  Ch 53: placeholder
+  Ch 54: placeholder
+  Ch 55: placeholder
+  Ch 57: placeholder
+  Ch 58: placeholder
+  Ch 59: placeholder
+  Ch 60: placeholder
+  Ch 61: placeholder
+  Ch 63: placeholder
+  Ch 64: placeholder
+  Ch 65: placeholder
+  Ch 66: placeholder
+  Ch 67: placeholder
+  Ch 68: placeholder
+  Ch 69: placeholder
+  Ch 70: placeholder
+  Ch 71: placeholder
+  Ch 72: placeholder
+  Ch 74: placeholder
+  Ch 75: placeholder
+  Ch 76: placeholder
+  Ch 77: placeholder
+  Ch 78: placeholder
+  Ch 79: placeholder
+  Ch 80: placeholder
+  Ch 81: placeholder
+  Ch 82: placeholder
+  Ch 83: placeholder
+  Ch 85: placeholder
+  Ch 86: placeholder
+  Ch 87: placeholder
+  Ch 88: placeholder
+  Ch 89: placeholder
+  Ch 92: placeholder
+  Ch 93: placeholder
+  Ch 94: placeholder
+  Ch 95: placeholder
+  Ch 96: placeholder
+  Ch 97: placeholder
+  Ch 98: placeholder
+  Ch 99: placeholder
+  Ch 101: placeholder
+  Ch 102: placeholder
+  Ch 104: placeholder
+  Ch 105: placeholder
+  Ch 106: placeholder
+  Ch 107: placeholder
+  Ch 108: placeholder
+  Ch 109: placeholder
+  Ch 110: placeholder
+  Ch 111: placeholder
+  Ch 112: placeholder
+  Ch 113: placeholder
+  Ch 114: placeholder
+  Ch 115: placeholder
+  Ch 116: placeholder
+  Ch 117: placeholder
+  Ch 120: placeholder
+  Ch 122: placeholder
+  Ch 123: placeholder
+  Ch 124: placeholder
+  Ch 125: placeholder
+  Ch 126: placeholder
+  Ch 128: placeholder
+  Ch 129: placeholder
+  Ch 130: placeholder
+  Ch 131: placeholder
+  Ch 132: placeholder
+  Ch 133: placeholder
+  Ch 134: placeholder
+  Ch 135: placeholder
+  Ch 136: placeholder
+  Ch 137: placeholder
+  Ch 140: placeholder
+  Ch 141: placeholder
+  Ch 142: placeholder
+  Ch 143: placeholder
+  Ch 144: placeholder
+  Ch 146: placeholder
+  Ch 147: placeholder
+  Ch 148: placeholder
+  Ch 149: placeholder
+  PARTIAL: 27/150
+
+[20/66] Proverbs (امثال)
+  Have 9/31 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 10: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 17: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  Ch 29: placeholder
+  Ch 30: placeholder
+  PARTIAL: 9/31
+
+[21/66] Ecclesiastes (واعظ)
+  Have 2/12 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  PARTIAL: 2/12
+
+[22/66] Song of Solomon (غزل الغزلات)
+  Have 2/8 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  PARTIAL: 2/8
+
+[23/66] Isaiah (یسعیاہ)
+  Already complete (66 chapters)
+
+[24/66] Jeremiah (یرمیاہ)
+  Already complete (52 chapters)
+
+[25/66] Lamentations (نوحہ)
+  Already complete (5 chapters)
+
+[26/66] Ezekiel (حزقی ایل)
+  Have 1/48 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  Ch 29: placeholder
+  Ch 30: placeholder
+  Ch 31: placeholder
+  Ch 32: placeholder
+  Ch 33: placeholder
+  Ch 34: placeholder
+  Ch 35: placeholder
+  Ch 36: placeholder
+  Ch 38: placeholder
+  Ch 39: placeholder
+  Ch 40: placeholder
+  Ch 41: placeholder
+  Ch 42: placeholder
+  Ch 43: placeholder
+  Ch 44: placeholder
+  Ch 45: placeholder
+  Ch 46: placeholder
+  Ch 47: placeholder
+  Ch 48: placeholder
+  PARTIAL: 1/48
+
+[27/66] Daniel (دانی ایل)
+  Already complete (12 chapters)
+
+[28/66] Hosea (ہوسیع)
+  Already complete (14 chapters)
+
+[29/66] Joel (یوایل)
+  Have 1/3 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 3: placeholder
+  PARTIAL: 1/3
+
+[30/66] Amos (عاموس)
+  Have 1/9 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  PARTIAL: 1/9
+
+[31/66] Obadiah (عبدیاہ)
+  Already complete (1 chapters)
+
+[32/66] Jonah (یُوناہ)
+  Already complete (4 chapters)
+
+[33/66] Micah (میکاہ)
+  Already complete (7 chapters)
+
+[34/66] Nahum (ناحُوم)
+  Have 1/3 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 3: placeholder
+  PARTIAL: 1/3
+
+[35/66] Habakkuk (حبقُّوق)
+  Already complete (3 chapters)
+
+[36/66] Zephaniah (صفنیاہ)
+  Have 1/3 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  PARTIAL: 1/3
+
+[37/66] Haggai (حجّی)
+  Already complete (2 chapters)
+
+[38/66] Zechariah (زکریاہ)
+  Have 2/14 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  PARTIAL: 2/14
+
+[39/66] Malachi (ملاکی)
+  Already complete (4 chapters)
+
+[40/66] Matthew (متّی)
+  Have 9/28 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  PARTIAL: 9/28
+
+[41/66] Mark (مرقس)
+  Have 4/16 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  PARTIAL: 4/16
+
+[42/66] Luke (لُوقا)
+  Have 9/24 chapters, fetching rest...
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 10: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 16: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  PARTIAL: 9/24
+
+[43/66] John (یُوحنّا)
+  Have 11/21 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 5: placeholder
+  Ch 7: placeholder
+  Ch 9: placeholder
+  Ch 12: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  PARTIAL: 11/21
+
+[44/66] Acts (اعمال)
+  Have 4/28 chapters, fetching rest...
+  Ch 3: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 13: placeholder
+  Ch 14: placeholder
+  Ch 15: placeholder
+  Ch 17: placeholder
+  Ch 18: placeholder
+  Ch 19: placeholder
+  Ch 20: placeholder
+  Ch 21: placeholder
+  Ch 22: placeholder
+  Ch 23: placeholder
+  Ch 24: placeholder
+  Ch 25: placeholder
+  Ch 26: placeholder
+  Ch 27: placeholder
+  Ch 28: placeholder
+  PARTIAL: 4/28
+
+[45/66] Romans (رومیوں)
+  Already complete (16 chapters)
+
+[46/66] 1 Corinthians (۱-کُرنتھیوں)
+  Have 3/16 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  Ch 5: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 9: placeholder
+  Ch 11: placeholder
+  Ch 12: placeholder
+  Ch 14: placeholder
+  Ch 16: placeholder
+  PARTIAL: 3/16
+
+[47/66] 2 Corinthians (۲-کُرنتھیوں)
+  Have 5/13 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 6: placeholder
+  Ch 7: placeholder
+  Ch 8: placeholder
+  Ch 10: placeholder
+  Ch 11: placeholder
+  Ch 13: placeholder
+  PARTIAL: 5/13
+
+[48/66] Galatians (گلتیوں)
+  Already complete (6 chapters)
+
+[49/66] Ephesians (اِفسیوں)
+  Already complete (6 chapters)
+
+[50/66] Philippians (فِلپّیوں)
+  Already complete (4 chapters)
+
+[51/66] Colossians (کُلسّیوں)
+  Already complete (4 chapters)
+
+[52/66] 1 Thessalonians (۱-تھسّلُنیکیوں)
+  Have 2/5 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  Ch 3: placeholder
+  PARTIAL: 2/5
+
+[53/66] 2 Thessalonians (۲-تھسّلُنیکیوں)
+  Have 1/3 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 2: placeholder
+  PARTIAL: 1/3
+
+[54/66] 1 Timothy (۱-تیمُتھیُس)
+  Have 3/6 chapters, fetching rest...
+  Ch 2: placeholder
+  Ch 3: placeholder
+  Ch 5: placeholder
+  PARTIAL: 3/6
+
+[55/66] 2 Timothy (۲-تیمُتھیُس)
+  Already complete (4 chapters)
+
+[56/66] Titus (طِطُس)
+  Have 2/3 chapters, fetching rest...
+  Ch 1: placeholder
+  PARTIAL: 2/3
+
+[57/66] Philemon (فِلیمون)
+  Already complete (1 chapters)
+
+[58/66] Hebrews (عبرانیوں)
+  Already complete (13 chapters)
+
+[59/66] James (یعقُوب)
+  Already complete (5 chapters)
+
+[60/66] 1 Peter (۱-پطرس)
+  Have 2/5 chapters, fetching rest...
+  Ch 1: placeholder
+  Ch 3: placeholder
+  Ch 4: placeholder
+  PARTIAL: 2/5
+
+[61/66] 2 Peter (۲-پطرس)
+  Have 2/3 chapters, fetching rest...
+  Ch 2: placeholder
+  PARTIAL: 2/3
+
+[62/66] 1 John (۱-یُوحنّا)
+  Have 4/5 chapters, fetching rest...
+  Ch 2: placeholder
+  PARTIAL: 4/5
+
+[63/66] 2 John (۲-یُوحنّا)
+  Already complete (1 chapters)
+
+[64/66] 3 John (۳-یُوحنّا)
+  Already complete (1 chapters)
+
+[65/66] Jude (یہُوداہ)
+  Already complete (1 chapters)
+
+[66/66] Revelation (مکاشفہ)
+  Already complete (22 chapters)
+
+============================================================
+DOWNLOAD COMPLETE
+  Skipped (already complete): 25
+  Complete: 0
+  Partial: 39
+  Failed: 2
+============================================================

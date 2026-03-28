@@ -1,0 +1,13 @@
+Rendering ss1_home.html ...
+C:\Users\WelCome\AndroidStudioProjects\CPASongs\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:184
+                        ? new Error(`${response.errorText} at ${url}`)
+                          ^
+
+Error: net::ERR_FILE_NOT_FOUND at file:///C:/Users/WelCome/AndroidStudioProjects/CPASongs/screenshots/ss1_home.html
+    at navigate (C:\Users\WelCome\AndroidStudioProjects\CPASongs\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:184:27)
+    at async Deferred.race (C:\Users\WelCome\AndroidStudioProjects\CPASongs\node_modules\puppeteer-core\lib\cjs\puppeteer\util\Deferred.js:36:20)
+    at async CdpFrame.goto (C:\Users\WelCome\AndroidStudioProjects\CPASongs\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:150:25)
+    at async CdpPage.goto (C:\Users\WelCome\AndroidStudioProjects\CPASongs\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Page.js:580:20)
+    at async C:\Users\WelCome\AndroidStudioProjects\CPASongs\generate_screenshots.js:37:5
+
+Node.js v25.6.1
