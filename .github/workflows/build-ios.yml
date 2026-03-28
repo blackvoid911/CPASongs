@@ -1,0 +1,202 @@
+name: Build iOS (KMP Framework)
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'shared/**'
+      - 'iosApp/**'
+      - '.github/workflows/build-ios.yml'
+  workflow_dispatch:
+
+jobs:
+  build-ios-kmp:
+    name: iOS Build via KMP
+    runs-on: macos-14
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Set up JDK 17 (for Gradle)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+      
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.4'
+      
+      - name: Grant execute permission
+        run: chmod +x gradlew
+      
+      - name: Cache KMP Frameworks
+        uses: actions/cache@v4
+        with:
+          path: |
+            shared/build/bin
+            ~/.konan
+          key: ${{ runner.os }}-kmp-${{ hashFiles('shared/**/*.kt', 'shared/build.gradle.kts') }}
+          restore-keys: |
+            ${{ runner.os }}-kmp-
+      
+      - name: Build KMP Shared Framework (Debug/Simulator)
+        run: |
+          echo "Building KMP framework for iOS Simulator..."
+          ./gradlew :shared:linkDebugFrameworkIosSimulatorArm64 --no-daemon --stacktrace
+          
+          FRAMEWORK="shared/build/bin/iosSimulatorArm64/debugFramework/shared.framework"
+          if [ -d "$FRAMEWORK" ]; then
+            echo "✅ Framework built: $FRAMEWORK"
+            echo "Framework size: $(du -sh $FRAMEWORK | cut -f1)"
+            echo "Files:"
+            ls -lh "$FRAMEWORK/"
+          else
+            echo "❌ Framework build failed"
+            exit 1
+          fi
+      
+      - name: Copy Assets to iOS Bundle (if not already there)
+        run: |
+          echo "Checking if assets need to be copied..."
+          if [ ! -f "iosApp/iosApp/urdusongs.json" ]; then
+            echo "Copying song assets..."
+            cp app/src/main/assets/urdusongs.json iosApp/iosApp/ || true
+            cp app/src/main/assets/englishsongs.json iosApp/iosApp/ || true
+          fi
+          if [ ! -d "iosApp/iosApp/bible" ]; then
+            echo "Copying Bible assets..."
+            cp -r app/src/main/assets/bible iosApp/iosApp/ || true
+          fi
+          echo "Asset copy complete (if needed)"
+      
+      - name: Build iOS App (Simulator)
+        run: |
+          cd iosApp
+          xcodebuild \
+            -project iosApp.xcodeproj \
+            -scheme iosApp \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 15 Pro' \
+            -derivedDataPath ./build \
+            clean build \
+            | tee build.log \
+            | xcpretty || cat build.log
+      
+      - name: Verify iOS Build
+        run: |
+          APP_PATH="iosApp/build/Build/Products/Debug-iphonesimulator/iosApp.app"
+          if [ -d "$APP_PATH" ]; then
+            echo "✅ iOS app built successfully"
+            echo "App size: $(du -sh $APP_PATH | cut -f1)"
+            echo "Contents:"
+            ls -lh "$APP_PATH" | head -20
+          else
+            echo "❌ iOS app build failed"
+            exit 1
+          fi
+      
+      - name: Upload iOS Simulator App
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-simulator-debug
+          path: iosApp/build/Build/Products/Debug-iphonesimulator/iosApp.app
+          retention-days: 14
+      
+      - name: Build Summary
+        if: always()
+        run: |
+          echo "## 🍎 iOS KMP Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **KMP Framework**: Built from shared/src/commonMain + iosMain" >> $GITHUB_STEP_SUMMARY
+          echo "- **Platform**: iOS Simulator (arm64 for M1/M2/M3 Macs)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Configuration**: Debug (unoptimized, with symbols)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -d "iosApp/build/Build/Products/Debug-iphonesimulator/iosApp.app" ]; then
+            echo "✅ **Status**: Build succeeded" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Status**: Build failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # ============ iOS DEVICE BUILD (Release) ============
+  build-ios-release:
+    name: iOS Device Build (KMP)
+    runs-on: macos-14
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+      
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.4'
+      
+      - name: Grant execute permission
+        run: chmod +x gradlew
+      
+      - name: Build KMP Shared Framework (Release/Device)
+        run: |
+          echo "Building KMP framework for iOS devices..."
+          ./gradlew :shared:linkReleaseFrameworkIosArm64 --no-daemon --stacktrace
+          
+          FRAMEWORK="shared/build/bin/iosArm64/releaseFramework/shared.framework"
+          if [ -d "$FRAMEWORK" ]; then
+            echo "✅ Release framework built"
+            echo "Size: $(du -sh $FRAMEWORK | cut -f1)"
+          else
+            echo "❌ Release framework build failed"
+            exit 1
+          fi
+      
+      - name: Copy Assets
+        run: |
+          cp app/src/main/assets/urdusongs.json iosApp/iosApp/ || true
+          cp app/src/main/assets/englishsongs.json iosApp/iosApp/ || true
+          cp -r app/src/main/assets/bible iosApp/iosApp/ || true
+      
+      - name: Build iOS App (Device - Unsigned)
+        run: |
+          cd iosApp
+          xcodebuild \
+            -project iosApp.xcodeproj \
+            -scheme iosApp \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath ./build \
+            clean build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            | tee build.log \
+            | xcpretty || cat build.log
+      
+      - name: Create IPA
+        run: |
+          cd iosApp/build/Build/Products/Release-iphoneos
+          mkdir -p Payload
+          cp -r iosApp.app Payload/
+          zip -r ../iosApp-unsigned.ipa Payload/
+          echo "✅ Unsigned IPA created"
+          ls -lh ../iosApp-unsigned.ipa
+      
+      - name: Upload iOS Device IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-device-unsigned-ipa
+          path: iosApp/build/Build/Products/iosApp-unsigned.ipa
+          retention-days: 30
+
