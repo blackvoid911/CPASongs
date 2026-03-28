@@ -88,7 +88,7 @@ $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 .\gradlew.bat testDebugUnitTest
 .\gradlew.bat lintDebug
 ```
-- **iOS builds require macOS** with Xcode 15+. The `shared/build.gradle.kts` conditionally enables iOS targets only when `os.name` starts with `Mac OS`. On Windows, iOS source sets are skipped — this is intentional.
+- **iOS builds require macOS** with Xcode 15+. The `shared/build.gradle.kts` conditionally enables iOS targets only when `os.name` contains `"Mac OS"` (case-insensitive). On Windows, iOS source sets are skipped — this is intentional.
 - To build the iOS app on macOS:
 ```bash
 cd iosApp
