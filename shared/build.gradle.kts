@@ -8,8 +8,10 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-// iOS targets only compile on macOS (requires Apple linker tools)
-val isRunningOnMac = System.getProperty("os.name")?.startsWith("Mac OS") ?: false
+// iOS targets only compile on macOS (requires Apple linker tools).
+// Modern macOS returns "Mac OS X"; match case-insensitively for safety.
+val osName = System.getProperty("os.name") ?: ""
+val isRunningOnMac = osName.contains("Mac OS", ignoreCase = true)
 
 kotlin {
     androidTarget {
@@ -29,6 +31,12 @@ kotlin {
                 isStatic = true
             }
         }
+
+        // Explicitly ensure the default hierarchy (iosMain etc.) is created.
+        // Kotlin 2.0 applies this by default, but calling it explicitly is a
+        // safety-net for Gradle 9.x where lazy source-set creation can race.
+        @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
+        applyDefaultHierarchyTemplate()
     }
 
     sourceSets {
@@ -50,12 +58,17 @@ kotlin {
             implementation(libs.androidx.compose.ui.text.google.fonts)
             implementation(libs.androidx.activity.compose)
         }
+    }
+}
 
-        if (isRunningOnMac) {
-            val iosMain by getting {
-                dependencies {
-                    implementation(libs.ktor.client.darwin)
-                }
+// Configure iOS dependencies safely.
+// configureEach is lazy — it applies the action whenever a matching source set
+// is realised, so it cannot fail if iosMain hasn't been registered yet.
+if (isRunningOnMac) {
+    kotlin.sourceSets.configureEach {
+        if (name == "iosMain") {
+            dependencies {
+                implementation(libs.ktor.client.darwin)
             }
         }
     }
@@ -80,5 +93,3 @@ compose.resources {
     packageOfResClass = "com.cpa.cpasongs.shared.generated.resources"
     generateResClass = always
 }
-
-
