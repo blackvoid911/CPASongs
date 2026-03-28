@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1400px; height: 1000px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Floating geometric shapes */
+  .bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+  }
+  .shape1 { width: 200px; height: 200px; background: #4A90D9; top: 10%; left: 5%; }
+  .shape2 { width: 150px; height: 150px; background: #2E5B8A; top: 60%; right: 8%; }
+  .shape3 { width: 100px; height: 100px; background: #4A90D9; bottom: 20%; left: 15%; }
+
+  /* Tablet mockup container */
+  .tablet-mockup {
+    width: 600px; height: 800px;
+    background: #2a2a2a;
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow:
+      0 0 0 8px #444,
+      0 0 0 12px #666,
+      0 30px 80px rgba(0,0,0,0.6),
+      0 60px 160px rgba(0,0,0,0.4);
+    position: relative;
+    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+  }
+
+  /* Tablet screen */
+  .tablet-screen {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Home button */
+  .tablet-mockup::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 60px;
+    background: #333;
+    border-radius: 50%;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  /* App content scaled for tablet */
+  .app-content {
+    transform: scale(1.4);
+    transform-origin: top left;
+    width: 71.4%; /* 100% / 1.4 */
+    height: 71.4%;
+  }
+
+  /* Status bar */
+  .status-bar {
+    width: 100%; height: 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; color: rgba(241,245,249,0.9); font-size: 12px; font-weight: 600;
+    background: linear-gradient(90deg, rgba(74,144,217,0.1) 0%, transparent 100%);
+  }
+  .status-icons { display: flex; gap: 6px; align-items: center; }
+
+  /* Logo and branding */
+  .logo-section {
+    padding: 40px 20px 20px;
+    text-align: center;
+  }
+  .logo-circle {
+    width: 120px; height: 120px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #4A90D9, #1E3A5F);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 12px 40px rgba(74,144,217,0.4);
+  }
+  .logo-circle span { font-size: 60px; color: white; }
+
+  .org-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; color: #F1F5F9;
+    line-height: 1.4; margin-bottom: 8px;
+  }
+  .verse {
+    font-size: 14px; color: #4A90D9;
+    font-style: italic; margin-bottom: 20px;
+  }
+
+  /* Menu grid */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 20px;
+  }
+  .menu-card {
+    background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+    border-radius: 20px; padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    border: 1px solid rgba(74,144,217,0.1);
+  }
+  .menu-icon {
+    width: 50px; height: 50px; margin: 0 auto 12px;
+    background: linear-gradient(135deg, #4A90D9, #2E5B8A);
+    border-radius: 15px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; color: white;
+  }
+  .menu-title {
+    font-size: 16px; font-weight: 700; color: #F1F5F9;
+    margin-bottom: 4px;
+  }
+  .menu-subtitle {
+    font-size: 12px; color: #94A3B8;
+  }
+
+  /* Marketing content */
+  .marketing-content {
+    position: absolute;
+    left: -200px; top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    width: 300px;
+  }
+  .marketing-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; font-weight: 900;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+  .marketing-subtitle {
+    font-size: 20px; font-weight: 600;
+    opacity: 0.9; margin-bottom: 24px;
+    line-height: 1.4;
+  }
+  .features-list {
+    list-style: none;
+  }
+  .features-list li {
+    display: flex; align-items: center;
+    margin-bottom: 12px;
+    font-size: 16px; font-weight: 500;
+  }
+  .features-list li::before {
+    content: '✓';
+    background: linear-gradient(135deg, #4A90D9, #2E5B8A);
+    color: white;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-right: 12px;
+    font-size: 14px; font-weight: 800;
+  }
+
+  /* Device label */
+  .device-label {
+    position: absolute;
+    bottom: -120px; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px; font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+</style>
+</head>
+<body>
+  <div class="bg-shape shape1"></div>
+  <div class="bg-shape shape2"></div>
+  <div class="bg-shape shape3"></div>
+
+  <div class="marketing-content">
+    <div class="marketing-title">Church Companion App</div>
+    <div class="marketing-subtitle">Complete spiritual toolkit for modern worship</div>
+    <ul class="features-list">
+      <li>1000+ Hymns & Songs</li>
+      <li>Complete KJV Bible</li>
+      <li>English & Urdu Support</li>
+      <li>Offline Access</li>
+      <li>Advanced Search</li>
+      <li>Beautiful Typography</li>
+    </ul>
+  </div>
+
+  <div class="tablet-mockup">
+    <div class="tablet-screen">
+      <div class="app-content">
+        <div class="status-bar">
+          <span>9:41 AM</span>
+          <div class="status-icons">
+            <span>📶</span> <span>🔋</span>
+          </div>
+        </div>
+
+        <div class="logo-section">
+          <div class="logo-circle"><span>✝</span></div>
+          <div class="org-name">Calvary Pentecostal<br>Assemblies of Pakistan</div>
+          <div class="verse">"Go ye into all the world, and preach the gospel."</div>
+        </div>
+
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-icon">🎵</div>
+            <div class="menu-title">Song Book</div>
+            <div class="menu-subtitle">Hymns & Geet</div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-icon">📖</div>
+            <div class="menu-title">Bible</div>
+            <div class="menu-subtitle">KJV English & Urdu</div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-icon">🙏</div>
+            <div class="menu-title">Prayers</div>
+            <div class="menu-subtitle">Coming Soon</div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-icon">⛪</div>
+            <div class="menu-title">Church</div>
+            <div class="menu-subtitle">Find & Connect</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="device-label">iPad Pro</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+ Volume in drive C has no label.
+ Volume Serial Number is F4CC-E781
+
+ Directory of C:\Users\WelCome\AndroidStudioProjects\CPASongs\app\build\outputs\bundle\release
+
+03/24/2026  02:48 PM         6,962,153 app-release.aab
+               1 File(s)      6,962,153 bytes
+               0 Dir(s)  260,657,713,152 bytes free

@@ -1,0 +1,8 @@
+Urdu Bible Status Report
+========================
+
+Job: 42/42 chapters, 1070 verses
+Chapter 2 present: True
+
+Cache location: C:\xampp\htdocs\cpa\cache\bible
+Output location: C:\Users\WelCome\AndroidStudioProjects\CPASongs\app\src\main\assets\bible\urdu

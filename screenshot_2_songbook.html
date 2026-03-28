@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Screenshot 2 - Song Book</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1920px; overflow: hidden; font-family: 'Segoe UI', sans-serif; }
+  .phone {
+    width: 1080px; height: 1920px;
+    background: #0F172A;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+
+  /* Caption banner */
+  .caption-banner {
+    width: 100%; height: 200px;
+    background: linear-gradient(135deg, #4A90D9, #1E3A5F);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .caption-text {
+    font-size: 52px; font-weight: 800; color: white;
+    text-align: center; letter-spacing: 1px;
+  }
+
+  /* Top bar */
+  .top-bar {
+    padding: 32px 40px 16px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .back-arrow { font-size: 44px; color: #F1F5F9; }
+  .top-title-area { flex: 1; }
+  .top-label { font-size: 24px; color: #4A90D9; letter-spacing: 4px; font-weight: 600; }
+  .top-title { font-size: 42px; font-weight: 600; color: #F1F5F9; }
+  .search-icon { font-size: 40px; color: #F1F5F9; }
+
+  /* Tabs */
+  .tabs {
+    display: flex; padding: 8px 40px 20px; gap: 8px;
+  }
+  .tab {
+    padding: 16px 32px; font-size: 30px; font-weight: 600; color: #94A3B8;
+    border-bottom: 4px solid transparent;
+  }
+  .tab.active { color: #4A90D9; border-bottom-color: #4A90D9; }
+
+  /* Index grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 20px 40px;
+    flex: 1; overflow: hidden;
+  }
+  .index-card {
+    background: #1E293B;
+    border-radius: 32px;
+    aspect-ratio: 1;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .index-char {
+    font-size: 64px; font-weight: 700; color: #4A90D9;
+  }
+  .index-char.urdu {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 56px;
+  }
+  .index-count { font-size: 24px; color: #94A3B8; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="caption-banner">
+    <div class="caption-text">Browse Songs by Category</div>
+  </div>
+
+  <div class="top-bar">
+    <div class="back-arrow">←</div>
+    <div class="top-title-area">
+      <div class="top-label">CPA</div>
+      <div class="top-title">Songs Book</div>
+    </div>
+    <div class="search-icon">🔍</div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab">All</div>
+    <div class="tab">English</div>
+    <div class="tab active">Geet</div>
+    <div class="tab">Zaboor</div>
+  </div>
+
+  <div class="grid">
+    <div class="index-card"><div class="index-char urdu">آ</div><div class="index-count">12</div></div>
+    <div class="index-card"><div class="index-char urdu">ا</div><div class="index-count">24</div></div>
+    <div class="index-card"><div class="index-char urdu">ب</div><div class="index-count">8</div></div>
+    <div class="index-card"><div class="index-char urdu">پ</div><div class="index-count">6</div></div>
+    <div class="index-card"><div class="index-char urdu">ت</div><div class="index-count">15</div></div>
+    <div class="index-card"><div class="index-char urdu">ج</div><div class="index-count">5</div></div>
+    <div class="index-card"><div class="index-char urdu">چ</div><div class="index-count">3</div></div>
+    <div class="index-card"><div class="index-char urdu">ح</div><div class="index-count">9</div></div>
+    <div class="index-card"><div class="index-char urdu">خ</div><div class="index-count">18</div></div>
+    <div class="index-card"><div class="index-char urdu">د</div><div class="index-count">7</div></div>
+    <div class="index-card"><div class="index-char urdu">ر</div><div class="index-count">4</div></div>
+    <div class="index-card"><div class="index-char urdu">ز</div><div class="index-count">2</div></div>
+  </div>
+</div>
+</body>
+</html>
+

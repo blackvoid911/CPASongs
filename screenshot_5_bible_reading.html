@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Screenshot 5 - Bible Urdu</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1920px; overflow: hidden; font-family: 'Noto Nastaliq Urdu', 'Segoe UI', sans-serif; }
+  .phone {
+    width: 1080px; height: 1920px;
+    background: #0F172A;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  .caption-banner {
+    width: 100%; height: 200px;
+    background: linear-gradient(135deg, #4A90D9, #1E3A5F);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .caption-text {
+    font-size: 52px; font-weight: 800; color: white;
+    text-align: center; letter-spacing: 1px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .top-bar {
+    padding: 32px 40px 16px;
+    display: flex; align-items: center; gap: 20px;
+    direction: rtl;
+  }
+  .back-arrow { font-size: 44px; color: #F1F5F9; }
+  .top-title { font-size: 42px; font-weight: 600; color: #F1F5F9; flex: 1; }
+  .top-actions { display: flex; gap: 16px; align-items: center; direction: ltr; }
+  .top-btn { font-size: 30px; color: #F1F5F9; font-weight: 700; font-family: 'Segoe UI', sans-serif; }
+  .lang-toggle {
+    padding: 10px 24px; border-radius: 16px;
+    background: #334155; font-size: 26px; color: #F1F5F9; font-weight: 600;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  /* Testament tabs */
+  .testament-tabs {
+    display: flex; gap: 20px; padding: 16px 40px 24px;
+    direction: rtl;
+  }
+  .testament-tab {
+    flex: 1; padding: 24px; border-radius: 20px;
+    text-align: center; font-size: 32px; font-weight: 700;
+  }
+  .testament-tab.active { background: #4A90D9; color: white; }
+  .testament-tab.inactive { background: #334155; color: #94A3B8; }
+
+  /* Books grid */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0 40px 40px;
+    flex: 1; overflow: hidden;
+    direction: rtl;
+  }
+  .book-card {
+    background: #1E293B;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex; flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .book-chapters-badge {
+    align-self: flex-start;
+    background: rgba(74,144,217,0.2);
+    padding: 8px 16px; border-radius: 12px;
+    font-size: 26px; font-weight: 700; color: #4A90D9;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .book-name {
+    margin-top: 20px;
+    font-size: 38px; font-weight: 700; color: #F1F5F9;
+    line-height: 1.6;
+    text-align: right;
+  }
+  .book-count {
+    margin-top: 8px;
+    font-size: 26px; color: #94A3B8;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="caption-banner">
+    <div class="caption-text">Complete Bible in English &amp; Urdu</div>
+  </div>
+
+  <div class="top-bar">
+    <div class="back-arrow">→</div>
+    <div class="top-title">بائبل</div>
+    <div class="top-actions">
+      <div class="lang-toggle">UR</div>
+      <div class="top-btn">A-</div>
+      <div class="top-btn">A+</div>
+    </div>
+  </div>
+
+  <div class="testament-tabs">
+    <div class="testament-tab active">نیا عہد نامہ</div>
+    <div class="testament-tab inactive">پرانا عہد نامہ</div>
+  </div>
+
+  <div class="books-grid">
+    <div class="book-card">
+      <div class="book-chapters-badge">28</div>
+      <div class="book-name">متی</div>
+      <div class="book-count">28 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">16</div>
+      <div class="book-name">مرقس</div>
+      <div class="book-count">16 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">24</div>
+      <div class="book-name">لوقا</div>
+      <div class="book-count">24 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">21</div>
+      <div class="book-name">یوحنا</div>
+      <div class="book-count">21 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">28</div>
+      <div class="book-name">اعمال</div>
+      <div class="book-count">28 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">16</div>
+      <div class="book-name">رومیوں</div>
+      <div class="book-count">16 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">16</div>
+      <div class="book-name">۱-کرنتھیوں</div>
+      <div class="book-count">16 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">13</div>
+      <div class="book-name">۲-کرنتھیوں</div>
+      <div class="book-count">13 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">6</div>
+      <div class="book-name">گلتیوں</div>
+      <div class="book-count">6 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">6</div>
+      <div class="book-name">افسیوں</div>
+      <div class="book-count">6 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">4</div>
+      <div class="book-name">فلپیوں</div>
+      <div class="book-count">4 ابواب</div>
+    </div>
+    <div class="book-card">
+      <div class="book-chapters-badge">4</div>
+      <div class="book-name">کلسیوں</div>
+      <div class="book-count">4 ابواب</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

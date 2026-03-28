@@ -1,0 +1,164 @@
+
+========================================================================
+  English (KJV) Bible  (C:\Users\WelCome\AndroidStudioProjects\CPASongs\app\src\main\assets\bible)
+========================================================================
+
+  [OK] COMPLETE (66 books):
+       1_chronicles.json                     29 ch    942 verses
+       1_corinthians.json                    16 ch    437 verses
+       1_john.json                            5 ch    105 verses
+       1_kings.json                          22 ch    816 verses
+       1_peter.json                           5 ch    105 verses
+       1_samuel.json                         31 ch    810 verses
+       1_thessalonians.json                   5 ch     89 verses
+       1_timothy.json                         6 ch    113 verses
+       2_chronicles.json                     36 ch    822 verses
+       2_corinthians.json                    13 ch    257 verses
+       2_john.json                            1 ch     13 verses
+       2_kings.json                          25 ch    719 verses
+       2_peter.json                           3 ch     61 verses
+       2_samuel.json                         24 ch    695 verses
+       2_thessalonians.json                   3 ch     47 verses
+       2_timothy.json                         4 ch     83 verses
+       3_john.json                            1 ch     14 verses
+       acts.json                             28 ch   1007 verses
+       amos.json                              9 ch    146 verses
+       colossians.json                        4 ch     95 verses
+       daniel.json                           12 ch    357 verses
+       deuteronomy.json                      34 ch    959 verses
+       ecclesiastes.json                     12 ch    222 verses
+       ephesians.json                         6 ch    155 verses
+       esther.json                           10 ch    167 verses
+       exodus.json                           40 ch   1213 verses
+       ezekiel.json                          48 ch   1273 verses
+       ezra.json                             10 ch    280 verses
+       galatians.json                         6 ch    149 verses
+       genesis.json                          50 ch   1533 verses
+       habakkuk.json                          3 ch     56 verses
+       haggai.json                            2 ch     38 verses
+       hebrews.json                          13 ch    303 verses
+       hosea.json                            14 ch    197 verses
+       isaiah.json                           66 ch   1292 verses
+       james.json                             5 ch    108 verses
+       jeremiah.json                         52 ch   1364 verses
+       job.json                              42 ch   1070 verses
+       joel.json                              3 ch     73 verses
+       john.json                             21 ch    879 verses
+       jonah.json                             4 ch     48 verses
+       joshua.json                           24 ch    658 verses
+       jude.json                              1 ch     25 verses
+       judges.json                           21 ch    618 verses
+       lamentations.json                      5 ch    154 verses
+       leviticus.json                        27 ch    859 verses
+       luke.json                             24 ch   1151 verses
+       malachi.json                           4 ch     55 verses
+       mark.json                             16 ch    678 verses
+       matthew.json                          28 ch   1071 verses
+       micah.json                             7 ch    105 verses
+       nahum.json                             3 ch     47 verses
+       nehemiah.json                         13 ch    406 verses
+       numbers.json                          36 ch   1288 verses
+       obadiah.json                           1 ch     21 verses
+       philemon.json                          1 ch     25 verses
+       philippians.json                       4 ch    104 verses
+       proverbs.json                         31 ch    915 verses
+       psalms.json                          150 ch   2461 verses
+       revelation.json                       22 ch    404 verses
+       romans.json                           16 ch    433 verses
+       ruth.json                              4 ch     85 verses
+       song_of_solomon.json                   8 ch    117 verses
+       titus.json                             3 ch     46 verses
+       zechariah.json                        14 ch    211 verses
+       zephaniah.json                         3 ch     53 verses
+
+  SUMMARY: 66 complete | 0 mismatched | 0 unverified | 0 stubs
+           Total verses with content: 31,102
+
+========================================================================
+  Urdu Bible  (C:\Users\WelCome\AndroidStudioProjects\CPASongs\app\src\main\assets\bible\urdu)
+========================================================================
+
+  [OK] COMPLETE (53 books):
+       1chronicles.json                      29 ch    942 verses
+       1corinthians.json                     16 ch    437 verses
+       1john.json                             5 ch    105 verses
+       1kings.json                           22 ch    816 verses
+       1peter.json                            5 ch    105 verses
+       1samuel.json                          31 ch    810 verses
+       1thessalonians.json                    5 ch     89 verses
+       1timothy.json                          6 ch    113 verses
+       2chronicles.json                      36 ch    822 verses
+       2corinthians.json                     13 ch    257 verses
+       2john.json                             1 ch     13 verses
+       2kings.json                           25 ch    719 verses
+       2peter.json                            3 ch     61 verses
+       2samuel.json                          24 ch    695 verses
+       2thessalonians.json                    3 ch     47 verses
+       2timothy.json                          4 ch     83 verses
+       acts.json                             28 ch   1007 verses
+       colossians.json                        4 ch     95 verses
+       daniel.json                           12 ch    357 verses
+       deuteronomy.json                      34 ch    959 verses
+       ecclesiastes.json                     12 ch    222 verses
+       ephesians.json                         6 ch    155 verses
+       esther.json                           10 ch    167 verses
+       exodus.json                           40 ch   1213 verses
+       ezekiel.json                          48 ch   1273 verses
+       ezra.json                             10 ch    280 verses
+       galatians.json                         6 ch    149 verses
+       genesis.json                          50 ch   1533 verses
+       hebrews.json                          13 ch    303 verses
+       hosea.json                            14 ch    197 verses
+       isaiah.json                           66 ch   1292 verses
+       james.json                             5 ch    108 verses
+       jeremiah.json                         52 ch   1364 verses
+       joel.json                              3 ch     73 verses
+       john.json                             21 ch    879 verses
+       joshua.json                           24 ch    658 verses
+       jude.json                              1 ch     25 verses
+       judges.json                           21 ch    618 verses
+       lamentations.json                      5 ch    154 verses
+       leviticus.json                        27 ch    859 verses
+       luke.json                             24 ch   1151 verses
+       mark.json                             16 ch    678 verses
+       matthew.json                          28 ch   1071 verses
+       numbers.json                          36 ch   1288 verses
+       philemon.json                          1 ch     25 verses
+       philippians.json                       4 ch    104 verses
+       proverbs.json                         31 ch    915 verses
+       psalms.json                          150 ch   2461 verses
+       revelation.json                       22 ch    404 verses
+       romans.json                           16 ch    433 verses
+       ruth.json                              4 ch     85 verses
+       songofsolomon.json                     8 ch    117 verses
+       titus.json                             3 ch     46 verses
+
+  [MISMATCH] NEEDS ATTENTION (2 books):
+       3john.json                           1 ch         15/14 v              [+1 extra]
+         -> ch1:15/14
+       job.json                             41/42 ch     1057/1070 v          [-13 missing]
+         -> ch2:26/13, ch3:21/26, ch4:27/21, ch5:30/27, ch6:21/30, ch7:22/21, ch8:35/22, ch9:22/35  +31 more
+
+  [STUB] PLACEHOLDER ONLY — no real verse content (11 books):
+       amos.json
+       habakkuk.json
+       haggai.json
+       jonah.json
+       malachi.json
+       micah.json
+       nahum.json
+       nehemiah.json
+       obadiah.json
+       zechariah.json
+       zephaniah.json
+
+  SUMMARY: 53 complete | 2 mismatched | 0 unverified | 11 stubs
+           Total verses with content: 29,904
+
+========================================================================
+  GRAND TOTAL
+  English: 66 complete | 0 mismatch | 0 stubs | 0 unverified
+           31,102 verses stored  (KJV full Bible = 31,102 verses)
+  Urdu:    53 complete | 2 mismatch | 11 stubs | 0 unverified
+           29,904 verses stored
+========================================================================

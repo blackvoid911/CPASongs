@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1600px; height: 1200px;
+      background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Floating elemets */
+    .floating-element {
+      position: absolute;
+      opacity: 0.1;
+    }
+    .float1 { top: 10%; left: 5%; font-size: 120px; color: #4A90D9; }
+    .float2 { bottom: 15%; right: 8%; font-size: 80px; color: #2E5B8A; }
+    .float3 { top: 20%; right: 15%; font-size: 100px; color: #4A90D9; }
+
+    /* Multi-device showcase */
+    .devices-container {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      perspective: 1000px;
+    }
+
+    /* Android Phone */
+    .android-phone {
+      width: 320px; height: 640px;
+      background: linear-gradient(135deg, #333, #555);
+      border-radius: 40px;
+      padding: 6px;
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        inset 0 0 0 2px #666;
+      transform: rotateY(-10deg) rotateX(5deg);
+    }
+    .android-screen {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* iPhone */
+    .iphone {
+      width: 350px; height: 700px;
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+      border-radius: 50px;
+      padding: 8px;
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.7),
+        inset 0 0 0 3px #444;
+      transform: rotateY(10deg) rotateX(-2deg);
+      z-index: 2;
+    }
+    .iphone-screen {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: 42px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* iPhone notch */
+    .iphone::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: 50%;
+      transform: translateX(-50%);
+      width: 120px; height: 25px;
+      background: #1a1a1a;
+      border-radius: 0 0 15px 15px;
+      z-index: 10;
+    }
+
+    /* Tablet */
+    .tablet {
+      width: 450px; height: 600px;
+      background: linear-gradient(135deg, #2a2a2a, #4a4a4a);
+      border-radius: 30px;
+      padding: 15px;
+      box-shadow:
+        0 30px 100px rgba(0,0,0,0.5),
+        inset 0 0 0 2px #666;
+      transform: rotateY(-15deg) rotateX(10deg);
+    }
+    .tablet-screen {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* App content for different screens */
+    .app-home {
+      padding: 20px;
+      text-align: center;
+    }
+    .mini-logo {
+      width: 60px; height: 60px;
+      background: linear-gradient(135deg, #4A90D9, #1E3A5F);
+      border-radius: 50%;
+      margin: 20px auto 15px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px; color: white;
+    }
+    .mini-title {
+      font-size: 16px; font-weight: 700; color: #F1F5F9;
+      margin-bottom: 8px;
+    }
+    .mini-verse {
+      font-size: 11px; color: #4A90D9;
+      margin-bottom: 15px; font-style: italic;
+    }
+    .mini-menu {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .mini-card {
+      background: rgba(30,41,59,0.8);
+      border-radius: 12px; padding: 12px;
+      display: flex; align-items: center; gap: 12px;
+      border: 1px solid rgba(74,144,217,0.1);
+    }
+    .mini-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #4A90D9, #2E5B8A);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: white;
+    }
+    .mini-text {
+      font-size: 13px; font-weight: 600; color: #F1F5F9;
+    }
+
+    /* Tablet specific content */
+    .tablet-content {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      height: 100%;
+    }
+    .tablet-card {
+      background: linear-gradient(135deg, #1E293B, #334155);
+      border-radius: 20px; padding: 25px;
+      text-align: center;
+      border: 1px solid rgba(74,144,217,0.2);
+    }
+    .tablet-icon {
+      width: 70px; height: 70px;
+      background: linear-gradient(135deg, #4A90D9, #2E5B8A);
+      border-radius: 20px;
+      margin: 0 auto 15px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 35px; color: white;
+    }
+    .tablet-title {
+      font-size: 20px; font-weight: 700; color: #F1F5F9;
+      margin-bottom: 8px;
+    }
+    .tablet-subtitle {
+      font-size: 14px; color: #94A3B8;
+    }
+
+    /* Marketing overlay */
+    .marketing-overlay {
+      position: absolute;
+      top: 50px; left: 50px;
+      color: white;
+      z-index: 5;
+    }
+    .overlay-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 60px; font-weight: 900;
+      background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+    .overlay-subtitle {
+      font-size: 28px; font-weight: 600;
+      opacity: 0.9; margin-bottom: 30px;
+    }
+    .overlay-badge {
+      background: rgba(74,144,217,0.2);
+      backdrop-filter: blur(10px);
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 18px; font-weight: 700;
+      border: 1px solid rgba(74,144,217,0.3);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+<div class="floating-element float1">✝</div>
+<div class="floating-element float2">🎵</div>
+<div class="floating-element float3">📖</div>
+
+<div class="marketing-overlay">
+  <div class="overlay-title">CPASongs</div>
+  <div class="overlay-subtitle">Universal Church Companion</div>
+  <div class="overlay-badge">Available on All Devices</div>
+</div>
+
+<div class="devices-container">
+  <!-- Tablet -->
+  <div class="tablet">
+    <div class="tablet-screen">
+      <div class="tablet-content">
+        <div class="tablet-card">
+          <div class="tablet-icon">🎵</div>
+          <div class="tablet-title">Song Book</div>
+          <div class="tablet-subtitle">1000+ Hymns</div>
+        </div>
+        <div class="tablet-card">
+          <div class="tablet-icon">📖</div>
+          <div class="tablet-title">Bible</div>
+          <div class="tablet-subtitle">KJV Complete</div>
+        </div>
+        <div class="tablet-card">
+          <div class="tablet-icon">🙏</div>
+          <div class="tablet-title">Prayers</div>
+          <div class="tablet-subtitle">Daily Devotions</div>
+        </div>
+        <div class="tablet-card">
+          <div class="tablet-icon">⛪</div>
+          <div class="tablet-title">Church</div>
+          <div class="tablet-subtitle">Community</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- iPhone (Main) -->
+  <div class="iphone">
+    <div class="iphone-screen">
+      <div class="app-home">
+        <div class="mini-logo">✝</div>
+        <div class="mini-title">Calvary Pentecostal<br>Assemblies of Pakistan</div>
+        <div class="mini-verse">"Go ye into all the world"</div>
+        <div class="mini-menu">
+          <div class="mini-card">
+            <div class="mini-icon">🎵</div>
+            <div class="mini-text">Song Book</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-icon">📖</div>
+            <div class="mini-text">Bible Reader</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-icon">🙏</div>
+            <div class="mini-text">Prayer Requests</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Android Phone -->
+  <div class="android-phone">
+    <div class="android-screen">
+      <div class="app-home">
+        <div class="mini-logo">✝</div>
+        <div class="mini-title">CPA Songs</div>
+        <div class="mini-verse">Church Companion App</div>
+        <div class="mini-menu">
+          <div class="mini-card">
+            <div class="mini-icon">🎵</div>
+            <div class="mini-text">Songs</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-icon">📖</div>
+            <div class="mini-text">Bible</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

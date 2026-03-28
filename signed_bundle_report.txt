@@ -1,0 +1,20 @@
+==========================================  
+CPASongs - SIGNED App Bundle Report  
+==========================================  
+  
+Build Date: Tue 03/24/2026 14:55:12.19  
+  
+û Release keystore generated  
+û Signing configuration added  
+û Signed bundle created  
+  
+ Volume in drive C has no label.
+ Volume Serial Number is F4CC-E781
+
+ Directory of C:\Users\WelCome\AndroidStudioProjects\CPASongs\app\build\outputs\bundle\release
+
+03/24/2026  02:54 PM         6,976,682 app-release.aab
+               1 File(s)      6,976,682 bytes
+               0 Dir(s)  260,754,935,808 bytes free
+  
+READY FOR GOOGLE PLAY CONSOLE UPLOAD 

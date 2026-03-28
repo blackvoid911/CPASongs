@@ -1,0 +1,18 @@
+
+isaiah.json: 66 chapters, 66 total verses, max_per_ch=1
+  Per-chapter (first 10): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+psalms.json: 150 chapters, 150 total verses, max_per_ch=1
+  Per-chapter (first 10): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+proverbs.json: 31 chapters, 31 total verses, max_per_ch=1
+  Per-chapter (first 10): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+ecclesiastes.json: 12 chapters, 12 total verses, max_per_ch=1
+  Per-chapter (first 10): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+esther.json: 10 chapters, 10 total verses, max_per_ch=1
+  Per-chapter (first 10): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+songofsolomon.json: 8 chapters, 8 total verses, max_per_ch=1
+  Per-chapter (first 10): [1, 1, 1, 1, 1, 1, 1, 1]

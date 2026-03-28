@@ -62,6 +62,7 @@ import com.cpa.cpasongs.shared.generated.resources.ic_launcher_foreground
 // CompositionLocal for Urdu font - initialized inside CPAMainApp
 val LocalUrduFont = compositionLocalOf<FontFamily> { FontFamily.Default }
 // Helper: multiplatform screen width in dp
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun rememberScreenWidthDp(): Int {
     val density = LocalDensity.current
@@ -1276,7 +1277,7 @@ fun SongBookApp(onBack: () -> Unit = {}) {
                         }
                     }
                     2 -> { val displayList = if (isSearching) filteredSongs else filteredSongs.filter { it.indexChar == selectedLetter }; SongListScreen(displayList) { selectedSong = it } }
-                    else -> SongIndexScreen(filteredSongs.groupBy { it.indexChar }.toSortedMap()) { selectedLetter = it }
+                    else -> SongIndexScreen(filteredSongs.groupBy { it.indexChar }.toList().sortedBy { it.first }.associate { it.first to it.second }) { selectedLetter = it }
                 }
             }
         }

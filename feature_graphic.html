@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CPA Songs & Bible - Feature Graphic</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1024px;
+    height: 500px;
+    overflow: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .container {
+    width: 1024px;
+    height: 500px;
+    background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 40%, #4A90D9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative background elements */
+  .bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.06;
+    background: white;
+  }
+  .bg-circle.c1 { width: 400px; height: 400px; top: -100px; right: -80px; }
+  .bg-circle.c2 { width: 300px; height: 300px; bottom: -120px; left: -60px; }
+  .bg-circle.c3 { width: 200px; height: 200px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.03; }
+
+  /* Subtle cross pattern */
+  .cross-bg {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 280px;
+    color: rgba(255,255,255,0.04);
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  /* Content */
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    z-index: 2;
+    padding: 0 80px;
+  }
+
+  /* Left side - Icon */
+  .icon-area {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .icon-box {
+    width: 160px;
+    height: 160px;
+    border-radius: 36px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .icon-inner {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #4A90D9, #1E3A5F);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+  .icon-inner span {
+    font-size: 64px;
+    color: white;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+
+  /* Right side - Text */
+  .text-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .app-name {
+    font-size: 52px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .app-name .highlight {
+    color: #7CB9F0;
+  }
+  .tagline {
+    font-size: 20px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    max-width: 480px;
+  }
+  .features {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .feature-badge {
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+  }
+  .feature-badge .emoji {
+    margin-right: 6px;
+  }
+
+  /* Urdu text accent */
+  .urdu-accent {
+    position: absolute;
+    bottom: 30px;
+    right: 80px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.35);
+    font-family: 'Noto Nastaliq Urdu', serif;
+    direction: rtl;
+    letter-spacing: 1px;
+  }
+
+  /* Bottom left verse */
+  .verse {
+    position: absolute;
+    bottom: 28px;
+    left: 80px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    font-style: italic;
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <!-- Background decorations -->
+    <div class="bg-circle c1"></div>
+    <div class="bg-circle c2"></div>
+    <div class="bg-circle c3"></div>
+    <div class="cross-bg">✝</div>
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="icon-area">
+        <div class="icon-box">
+          <div class="icon-inner">
+            <span>✝</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-area">
+        <div class="app-name">
+          CPA <span class="highlight">Songs</span><br>& Bible
+        </div>
+        <div class="tagline">
+          Your complete church companion with hymns, psalms, and scripture in English & Urdu
+        </div>
+        <div class="features">
+          <div class="feature-badge"><span class="emoji">🎵</span>Song Book</div>
+          <div class="feature-badge"><span class="emoji">📖</span>KJV Bible</div>
+          <div class="feature-badge"><span class="emoji">🌐</span>English & Urdu</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom accents -->
+    <div class="verse">"Go ye into all the world, and preach the gospel." — Mark 16:15</div>
+    <div class="urdu-accent">کلوری پینتیکوسٹل اسمبلیز</div>
+  </div>
+</body>
+</html>
+
