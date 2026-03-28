@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Method: app-store, ad-hoc, enterprise, or development -->
+    <key>method</key>
+    <string>app-store</string>
+
+    <!-- Bundle ID -->
+    <key>bundleID</key>
+    <string>com.cpa.cpasongs.ios</string>
+
+    <!-- Team ID (replace with your Apple Developer Team ID) -->
+    <!-- Find at: https://developer.apple.com/account -->
+    <key>teamID</key>
+    <string>YOUR_TEAM_ID_HERE</string>
+
+    <!-- Upload to App Store Connect -->
+    <key>uploadBitcode</key>
+    <false/>
+
+    <key>uploadSymbols</key>
+    <true/>
+
+    <!-- Signing style -->
+    <key>signingStyle</key>
+    <string>automatic</string>
+
+    <!-- Provisioning profiles (automatic managed by Xcode) -->
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.cpa.cpasongs.ios</key>
+        <string>Automatic</string>
+    </dict>
+
+    <!-- Compile bitcode (not needed for modern iOS) -->
+    <key>compileBitcode</key>
+    <false/>
+
+    <!-- Distribution certificate -->
+    <key>signingCertificate</key>
+    <string>Apple Distribution</string>
+
+    <!-- Thinning (let App Store optimize) -->
+    <key>thinning</key>
+    <string>&lt;none&gt;</string>
+</dict>
+</plist>
+
