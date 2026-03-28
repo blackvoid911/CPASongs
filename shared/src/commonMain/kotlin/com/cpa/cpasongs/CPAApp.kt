@@ -76,6 +76,7 @@ fun rememberScreenWidthDp(): Int {
 enum class Screen {
     HOME, SONG_BOOK, BIBLE_READER
 }
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun CPAMainApp() {
     val urduFont = urduFontFamily()

@@ -1,4 +1,4 @@
-﻿package com.cpa.cpasongs
+package com.cpa.cpasongs
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontFamily
 import kotlinx.coroutines.Dispatchers
@@ -32,6 +32,7 @@ actual suspend fun readAssetFile(path: String): String? = withContext(Dispatcher
         else
             bundle.pathForResource(name, ext)
         filePath?.let { 
+            @OptIn(ExperimentalForeignApi::class)
             NSString.create(contentsOfFile = it, encoding = NSUTF8StringEncoding, error = null) as? String 
         }
     } catch (e: Exception) { null }
@@ -42,6 +43,7 @@ actual suspend fun readCacheFile(fileName: String): String? = withContext(Dispat
         @Suppress("UNCHECKED_CAST")
         val dirs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true) as List<String>
         val docsDir = dirs.firstOrNull() ?: return@withContext null
+        @OptIn(ExperimentalForeignApi::class)
         NSString.create(contentsOfFile = "$docsDir/$fileName", encoding = NSUTF8StringEncoding, error = null) as? String
     } catch (e: Exception) { null }
 }
@@ -59,7 +61,7 @@ actual suspend fun writeCacheFile(fileName: String, content: String) = withConte
 actual suspend fun readSongVersion(): Long = withContext(Dispatchers.Default) {
     try {
         val defaults = NSUserDefaults.standardUserDefaults
-        val number = defaults.numberForKey("songs_version")
+        val number = defaults.objectForKey("songs_version") as? NSNumber
         number?.longValue ?: 0L
     } catch (e: Exception) {
         0L
@@ -69,15 +71,18 @@ actual suspend fun readSongVersion(): Long = withContext(Dispatchers.Default) {
 actual suspend fun writeSongVersion(version: Long): Unit = withContext(Dispatchers.Default) {
     try {
         val defaults = NSUserDefaults.standardUserDefaults
-        defaults.setObject(NSNumber(value = version), "songs_version")
+        defaults.setObjectForKey(NSNumber(longLong = version), "songs_version")
         defaults.synchronize()
     } catch (e: Exception) { }
 }
 
 actual fun platformLog(tag: String, message: String) { println("[$tag] $message") }
 
-actual fun currentTimeMillis(): Long =
-    (NSDate().timeIntervalSince1970 * 1000).toLong()
+actual fun currentTimeMillis(): Long {
+    val date = NSDate()
+    val interval = date.timeIntervalSince1970
+    return (interval * 1000).toLong()
+}
 
 @Composable
 actual fun BackHandlerEffect(enabled: Boolean, onBack: () -> Unit) {
@@ -91,3 +96,4 @@ actual fun urduFontFamily(): FontFamily = FontFamily.Default
 // 1. Download NotoNastaliqUrdu-Regular.ttf from Google Fonts
 // 2. Add to iosApp/iosApp/ and register in Info.plist under UIAppFonts
 // 3. Replace FontFamily.Default above with: FontFamily(Font("NotoNastaliqUrdu-Regular"))
+
