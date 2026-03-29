@@ -14,6 +14,16 @@ val osName = System.getProperty("os.name") ?: ""
 val isRunningOnMac = osName.contains("Mac OS", ignoreCase = true)
 
 kotlin {
+    // Global opt-in for experimental APIs used across source sets.
+    // This avoids per-call @OptIn annotations that are easy to miss.
+    sourceSets.configureEach {
+        languageSettings {
+            optIn("kotlinx.cinterop.ExperimentalForeignApi")
+            optIn("androidx.compose.foundation.layout.ExperimentalLayoutApi")
+            optIn("androidx.compose.ui.ExperimentalComposeUiApi")
+        }
+    }
+
     androidTarget {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
