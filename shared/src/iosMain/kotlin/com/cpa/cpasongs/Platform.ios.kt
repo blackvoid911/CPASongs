@@ -14,6 +14,7 @@ import platform.Foundation.NSUTF8StringEncoding
 import platform.Foundation.NSUserDomainMask
 import platform.Foundation.NSUserDefaults
 import platform.Foundation.create
+import platform.Foundation.timeIntervalSince1970
 import platform.Foundation.writeToFile
 
 actual fun initializePlatform(context: Any) { /* No-op on iOS */ }
@@ -71,7 +72,7 @@ actual suspend fun readSongVersion(): Long = withContext(Dispatchers.Default) {
 actual suspend fun writeSongVersion(version: Long): Unit = withContext(Dispatchers.Default) {
     try {
         val defaults = NSUserDefaults.standardUserDefaults
-        defaults.setObjectForKey(NSNumber(longLong = version), "songs_version")
+        defaults.setObject(NSNumber(longLong = version), forKey = "songs_version")
     } catch (e: Exception) { }
 }
 
@@ -95,5 +96,7 @@ actual fun urduFontFamily(): FontFamily = FontFamily.Default
 // 1. Download NotoNastaliqUrdu-Regular.ttf from Google Fonts
 // 2. Add to iosApp/iosApp/ and register in Info.plist under UIAppFonts
 // 3. Replace FontFamily.Default above with: FontFamily(Font("NotoNastaliqUrdu-Regular"))
+
+
 
 
