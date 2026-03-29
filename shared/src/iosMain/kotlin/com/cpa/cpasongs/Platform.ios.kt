@@ -72,7 +72,6 @@ actual suspend fun writeSongVersion(version: Long): Unit = withContext(Dispatche
     try {
         val defaults = NSUserDefaults.standardUserDefaults
         defaults.setObjectForKey(NSNumber(longLong = version), "songs_version")
-        defaults.synchronize()
     } catch (e: Exception) { }
 }
 
@@ -96,4 +95,5 @@ actual fun urduFontFamily(): FontFamily = FontFamily.Default
 // 1. Download NotoNastaliqUrdu-Regular.ttf from Google Fonts
 // 2. Add to iosApp/iosApp/ and register in Info.plist under UIAppFonts
 // 3. Replace FontFamily.Default above with: FontFamily(Font("NotoNastaliqUrdu-Regular"))
+
 
