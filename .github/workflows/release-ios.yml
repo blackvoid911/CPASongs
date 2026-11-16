@@ -1,0 +1,231 @@
+name: Sign and upload iOS
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_number:
+        description: 'iOS build number greater than the last uploaded build (for example, 1)'
+        required: true
+        type: string
+      upload:
+        description: 'Upload the signed IPA to App Store Connect for TestFlight'
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-app-store-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: macos-26
+    timeout-minutes: 45
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.4.app/Contents/Developer
+      IOS_BUNDLE_ID: com.cpa.cpasongs.ios
+      IOS_TEAM_ID: ${{ vars.APPLE_TEAM_ID }}
+      IOS_BUILD_NUMBER: ${{ inputs.build_number }}
+
+    steps:
+      - name: Check release inputs
+        run: |
+          [[ "$IOS_TEAM_ID" =~ ^[A-Z0-9]{10}$ ]] || {
+            echo "::error::Set the APPLE_TEAM_ID GitHub Actions variable."
+            exit 1
+          }
+          [[ "$IOS_BUILD_NUMBER" =~ ^[1-9][0-9]{0,17}$ ]] || {
+            echo "::error::Use a positive whole number for the iOS build number."
+            exit 1
+          }
+          xcodebuild -version
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-java@d7793b545071e98d581d3bf084a51c3213318a07 # v4.9.0
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Install distribution signing assets
+        env:
+          IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
+          IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+          IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          set -euo pipefail
+          : "${IOS_CERTIFICATE_BASE64:?Set the IOS_CERTIFICATE_BASE64 secret}"
+          : "${IOS_CERTIFICATE_PASSWORD:?Set the IOS_CERTIFICATE_PASSWORD secret}"
+          : "${IOS_PROVISIONING_PROFILE_BASE64:?Set the IOS_PROVISIONING_PROFILE_BASE64 secret}"
+          umask 077
+          signing="$RUNNER_TEMP/ios-signing"
+          mkdir -p "$signing"
+          trap 'rm -f "$signing/distribution.p12"' EXIT
+          printf '%s' "$IOS_CERTIFICATE_BASE64" | base64 -D > "$signing/distribution.p12"
+          printf '%s' "$IOS_PROVISIONING_PROFILE_BASE64" | base64 -D > "$signing/app.mobileprovision"
+          security cms -D -i "$signing/app.mobileprovision" > "$signing/profile.plist"
+
+          python3 - "$signing/profile.plist" <<'PY'
+          import datetime
+          import hashlib
+          import os
+          import plistlib
+          import sys
+          import uuid
+
+          with open(sys.argv[1], "rb") as source:
+              profile = plistlib.load(source)
+          entitlements = profile["Entitlements"]
+          team = os.environ["IOS_TEAM_ID"]
+          bundle = os.environ["IOS_BUNDLE_ID"]
+          app_id = entitlements["application-identifier"]
+          prefix, _, profile_bundle = app_id.partition(".")
+          if (team not in profile["TeamIdentifier"]
+                  or prefix not in profile["ApplicationIdentifierPrefix"]
+                  or profile_bundle != bundle):
+              sys.exit("The provisioning profile must match the Apple team and explicit iOS bundle ID.")
+          if (profile.get("ProvisionedDevices") or profile.get("ProvisionsAllDevices")
+                  or entitlements.get("get-task-allow")):
+              sys.exit("Use an App Store Connect distribution profile.")
+          if profile["ExpirationDate"].replace(tzinfo=datetime.timezone.utc) <= datetime.datetime.now(datetime.timezone.utc):
+              sys.exit("The provisioning profile has expired.")
+          certificates = profile["DeveloperCertificates"]
+          if len(certificates) != 1:
+              sys.exit("An App Store Connect profile must contain one distribution certificate.")
+          profile_uuid = str(uuid.UUID(profile["UUID"])).upper()
+          fingerprint = hashlib.sha1(certificates[0]).hexdigest().upper()
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
+              print(f"IOS_PROFILE_UUID={profile_uuid}", file=env)
+              print(f"IOS_IDENTITY_SHA1={fingerprint}", file=env)
+          PY
+
+          profile_uuid=$(/usr/libexec/PlistBuddy -c 'Print UUID' "$signing/profile.plist")
+          profile_uuid=$(printf '%s' "$profile_uuid" | tr '[:lower:]' '[:upper:]')
+          profile_dir="$HOME/Library/Developer/Xcode/UserData/Provisioning Profiles"
+          mkdir -p "$profile_dir"
+          cp "$signing/app.mobileprovision" "$profile_dir/$profile_uuid.mobileprovision"
+
+          keychain="$signing/release.keychain-db"
+          keychain_password=$(openssl rand -hex 24)
+          echo "::add-mask::$keychain_password"
+          security create-keychain -p "$keychain_password" "$keychain"
+          security set-keychain-settings -lut 3600 "$keychain"
+          security unlock-keychain -p "$keychain_password" "$keychain"
+          curl --fail --silent --show-error --retry 3 \
+            https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer -o "$signing/wwdr.cer"
+          security import "$signing/wwdr.cer" -k "$keychain"
+          security import "$signing/distribution.p12" -k "$keychain" -P "$IOS_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$keychain_password" "$keychain"
+          security list-keychains -d user -s "$keychain"
+
+      - name: Archive and export signed IPA
+        run: |
+          set -euo pipefail
+          identities=$(security find-identity -v -p codesigning "$RUNNER_TEMP/ios-signing/release.keychain-db")
+          if ! grep -F "$IOS_IDENTITY_SHA1" <<< "$identities" | grep -q 'Apple Distribution:'; then
+            echo "::error::The PKCS#12 must contain the valid Apple Distribution certificate and private key selected in the profile."
+            exit 1
+          fi
+
+          output="$RUNNER_TEMP/ios-release"
+          mkdir -p "$output"
+          chmod +x gradlew
+          xcodebuild archive \
+            -project iosApp/iosApp.xcodeproj \
+            -scheme iosApp \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$output/CPASongs.xcarchive" \
+            CODE_SIGN_STYLE=Manual \
+            CODE_SIGN_IDENTITY="$IOS_IDENTITY_SHA1" \
+            DEVELOPMENT_TEAM="$IOS_TEAM_ID" \
+            PROVISIONING_PROFILE_SPECIFIER="$IOS_PROFILE_UUID" \
+            CURRENT_PROJECT_VERSION="$IOS_BUILD_NUMBER"
+
+          python3 - "$output/ExportOptions.plist" <<'PY'
+          import os
+          import plistlib
+          import sys
+
+          with open(sys.argv[1], "wb") as options:
+              plistlib.dump({
+                  "method": "app-store-connect",
+                  "destination": "export",
+                  "signingStyle": "manual",
+                  "teamID": os.environ["IOS_TEAM_ID"],
+                  "signingCertificate": os.environ["IOS_IDENTITY_SHA1"],
+                  "provisioningProfiles": {
+                      os.environ["IOS_BUNDLE_ID"]: os.environ["IOS_PROFILE_UUID"],
+                  },
+                  "manageAppVersionAndBuildNumber": False,
+              }, options)
+          PY
+
+          xcodebuild -exportArchive \
+            -archivePath "$output/CPASongs.xcarchive" \
+            -exportOptionsPlist "$output/ExportOptions.plist" \
+            -exportPath "$output/export"
+          shopt -s nullglob
+          files=("$output/export/"*.ipa)
+          [[ ${#files[@]} -eq 1 ]] || { echo "::error::Expected exactly one exported IPA."; exit 1; }
+          cp "${files[0]}" "$output/CPASongs.ipa"
+          ditto -x -k "$output/CPASongs.ipa" "$output/verify"
+          apps=("$output/verify/Payload/"*.app)
+          [[ ${#apps[@]} -eq 1 ]] || { echo "::error::Expected exactly one app in the IPA."; exit 1; }
+          app=${apps[0]}
+          codesign --verify --deep --strict "$app"
+          [[ "$(/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' "$app/Info.plist")" == "$IOS_BUNDLE_ID" ]]
+          [[ "$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' "$app/Info.plist")" == "$IOS_BUILD_NUMBER" ]]
+          test -s "$app/PrivacyInfo.xcprivacy"
+          test -s "$app/bible/genesis.json"
+          test -s "$app/bible/urdu/job.json"
+          test -n "$(find "$app" -iname '*noto*nastaliq*' -print -quit)"
+
+      - name: Save signed IPA
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: CPASongs-iOS-${{ inputs.build_number }}
+          path: ${{ runner.temp }}/ios-release/CPASongs.ipa
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload to App Store Connect
+        if: inputs.upload
+        env:
+          ASC_KEY_ID: ${{ vars.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ vars.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+          [[ "$ASC_KEY_ID" =~ ^[A-Z0-9]{10}$ ]] || { echo "::error::Set the ASC_KEY_ID variable."; exit 1; }
+          [[ "$ASC_ISSUER_ID" =~ ^[0-9a-fA-F]{8}(-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}$ ]] || {
+            echo "::error::Set the ASC_ISSUER_ID variable."
+            exit 1
+          }
+          : "${ASC_PRIVATE_KEY:?Set the ASC_PRIVATE_KEY secret to the contents of the .p8 file}"
+          umask 077
+          cd "$RUNNER_TEMP/ios-release"
+          mkdir -p private_keys
+          key_file="private_keys/AuthKey_$ASC_KEY_ID.p8"
+          trap 'rm -f "$key_file"' EXIT
+          printf '%s\n' "$ASC_PRIVATE_KEY" > "$key_file"
+          xcrun altool --upload-app --type ios --file CPASongs.ipa \
+            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
+          echo "Uploaded iOS build $IOS_BUILD_NUMBER to App Store Connect. Apple will process it before it appears in TestFlight." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Remove runner signing credentials
+        if: always()
+        run: |
+          signing="$RUNNER_TEMP/ios-signing"
+          if [[ -f "$signing/release.keychain-db" ]]; then
+            security delete-keychain "$signing/release.keychain-db"
+          fi
+          if [[ -n "${IOS_PROFILE_UUID:-}" ]]; then
+            rm -f "$HOME/Library/Developer/Xcode/UserData/Provisioning Profiles/$IOS_PROFILE_UUID.mobileprovision"
+          fi
+          rm -f "$signing/distribution.p12" "$signing/app.mobileprovision" "$signing/profile.plist" "$signing/wwdr.cer"
